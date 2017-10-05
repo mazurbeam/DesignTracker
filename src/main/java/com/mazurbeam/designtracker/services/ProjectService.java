@@ -1,5 +1,7 @@
 package com.mazurbeam.designtracker.services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.mazurbeam.designtracker.models.Project;
@@ -17,6 +19,10 @@ public class ProjectService {
 	
 	public void saveProject(Project project) {
 		projectRepository.save(project);
+	}
+	
+	public List<Project> getAllProjects(){
+		return projectRepository.findAll();
 	}
 	
 }

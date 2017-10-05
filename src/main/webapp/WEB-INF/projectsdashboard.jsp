@@ -14,21 +14,22 @@
 	<h1>Projects Dashboard</h1>
 	
 	<div id="current_projects">
-		<c:forEach items="${currentProjects}" var="project">
-		
+		<c:forEach items="${projects}" var="project">
+			<p>Title: <c:out value="${project.title}"/></p>
+			<p>Client: <c:out value="${project.client.firstName}"/></p>
 		</c:forEach>
 	</div>
 	
 	<div id="new_project">
 		<p><form:errors path="project.*"/></p>
-		<form:form method="POST" action="/projects/newProject" modelAttribute="project">
+		<form:form method="POST" action="/projects/newProject/" modelAttribute="project">
 			<p>
 				<form:label path="title">Title:</form:label>
 				<form:input path="title"/>
 			</p>
         		<p>
         			<form:label path="client">Client:
-        			<form:select path="client" items="${clients}" itemValue="id" itemLabel="name">
+        			<form:select path="client" items="${clients}" itemValue="id" itemLabel="firstName">
         			</form:select></form:label>
         		</p>
         		<p>

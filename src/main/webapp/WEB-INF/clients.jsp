@@ -13,6 +13,7 @@
 <body>
 	<h1>Clients Dashboard</h1>
 	
+	<a href="/">Home</a>
 	<div id="new_client">
 		<p><form:errors path="client.*"/></p>
 		<form:form method="POST" action="/clients/newclient" modelAttribute="client">
