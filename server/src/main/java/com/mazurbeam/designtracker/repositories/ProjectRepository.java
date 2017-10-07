@@ -10,8 +10,9 @@ import com.mazurbeam.designtracker.models.Project;
 
 @RepositoryRestResource
 public interface ProjectRepository extends JpaRepository<Project, Long>{
+	
+	Project findOne(Long id);
 	List<Project> findAll();
 	
-	@Query(value="SELECT * FROM projects WHERE id=?1", nativeQuery=true)
-	Project findProjectById(Long id);
+	
 }

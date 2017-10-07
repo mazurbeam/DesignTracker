@@ -26,15 +26,6 @@ export class ProjectService {
       .catch(this.handleError);
   }
 
-  getProject(id: string): Promise<Project> {
-    const url = `http://localhost:8080/projects/get/${id}`;
-    console.log(url);
-    return this.http.get(url)
-      .toPromise()
-      .then(response => response.json() as Project)
-      .catch(this.handleError)
-  }
-
   private handleError(error: any): Promise<any> {
     console.error('Error', error); // for demo purposes only
     return Promise.reject(error.message || error);

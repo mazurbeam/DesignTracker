@@ -1,7 +1,7 @@
 <h3>Project List</h3>
 
 <div class="project-details" *ngFor="let p of myProjects">
-  <p>Name: {{p.name}}</p>
+  <p>Name: <a [routerLink]="['/projects',p._id]">{{p.name}}</a></p>
   <p>Client: {{p.client}}</p>
   <p>Address: {{p.address}}</p>
 </div>

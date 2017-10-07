@@ -1,4 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import 'rxjs/add/operator/switchMap';
+
+import {ProjectService} from '../../shared/project/project.service';
+import {Project} from '../../shared/project/project';
 
 @Component({
   selector: 'app-project-list',

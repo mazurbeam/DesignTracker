@@ -9,17 +9,24 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 @Table(name="projects")
 public class Project {
 	@Id
     @GeneratedValue
+    @JsonProperty("_id")
     private Long id;
+    @JsonProperty("name")
     private String name;
+    @JsonProperty("client")
     private String client;
+    @JsonProperty("address")
     private String address;
     
     @OneToMany(mappedBy="project", fetch = FetchType.LAZY)
+    @JsonProperty("_activites")
     private List<Activity> activities;
     
     public Project() {
