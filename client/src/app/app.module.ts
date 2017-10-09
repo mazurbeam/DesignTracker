@@ -12,6 +12,10 @@ import { ActivityService } from './shared/activity/activity.service';
 import { CreateProjectComponent } from './projects/create-project/create-project.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectDetailsComponent } from './projects/project-details/project-details.component';
+import { ProjectActivityComponent } from './projects/project-activity/project-activity.component';
+import { NewActivityComponent } from './projects/project-activity/new-activity/new-activity.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatCardModule, MatButtonToggleModule, MatToolbarModule, MatMenuModule} from '@angular/material';
 
 
 @NgModule({
@@ -21,13 +25,20 @@ import { ProjectDetailsComponent } from './projects/project-details/project-deta
     ProjectListComponent,
     CreateProjectComponent,
     HomeComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    ProjectActivityComponent,
+    NewActivityComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonToggleModule
   ],
   providers: [ProjectService, ActivityService],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ProjectService } from '../shared/project/project.service';
+import {Project} from 'w../shared/project/project';
 
 @Component({
   selector: 'app-projects',
@@ -9,7 +10,7 @@ import { ProjectService } from '../shared/project/project.service';
 })
 export class ProjectsComponent implements OnInit {
 
-  projects: Array<any>;
+  projects: Array<Project>;
 
   constructor(private projectService: ProjectService) {}
    

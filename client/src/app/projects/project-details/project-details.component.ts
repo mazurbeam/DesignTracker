@@ -19,7 +19,7 @@ export class ProjectDetailsComponent implements OnInit {
   ngOnInit() {
     this.subscription = this._route.paramMap
     .switchMap(params => {
-      console.log("TaskDetailsComponent loaded and url id given is: ", params.get('id'));
+      console.log("ProjectDetailsComponent loaded and url id given is: ", params.get('id'));
       return this._projectService.getProject(params.get('id'));
   }).subscribe(project => this.project = project);
   }

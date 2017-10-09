@@ -1,8 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
+  <mat-toolbar>
+    {{title}}
+    <a [routerLink]="['/projects']">Projects</a>
+    <mat-menu #appMenu="matMenu">
+        <button mat-menu-item> Settings </button>
+        <button mat-menu-item> Help </button>
+    </mat-menu>
+  </mat-toolbar>
 </div>
 
 <router-outlet></router-outlet>

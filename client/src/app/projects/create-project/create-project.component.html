@@ -1,15 +1,17 @@
 <h3>Create a Project</h3>
+<mat-card>
+    <form #form='ngForm' (submit)='create()'>
+        <p>Name: 
+          <input type="text" name='name' required minlength="4" [(ngModel)]='new_project.name'#projectname='ngModel'>
+          <span *ngIf='projectname.invalid'>Project name must be at least 4 characters.</span>
+        </p>
+        <p>Client:
+          <input type="text" name='client' required minlength="3" [(ngModel)]='new_project.client'#projectclient='ngModel'>
+        </p>
+        <p>Address:
+          <input type="text" name='address' required minlength="3" [(ngModel)]='new_project.address'#projectaddress='ngModel'>
+        </p>
+        <input type="submit" value="Create Project" [disabled]='form.invalid'>  
+      </form>
+</mat-card>
 
-<form #form='ngForm' (submit)='create()'>
-  <p>Name: 
-    <input type="text" name='name' required minlength="4" [(ngModel)]='new_project.name'#projectname='ngModel'>
-    <span *ngIf='projectname.invalid'>Project name must be at least 4 characters.</span>
-  </p>
-  <p>Client:
-    <input type="text" name='client' required minlength="3" [(ngModel)]='new_project.client'#projectclient='ngModel'>
-  </p>
-  <p>Address:
-    <input type="text" name='address' required minlength="3" [(ngModel)]='new_project.address'#projectaddress='ngModel'>
-  </p>
-  <input type="submit" value="Create Project" [disabled]='form.invalid'>  
-</form>

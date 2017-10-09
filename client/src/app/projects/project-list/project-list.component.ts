@@ -12,7 +12,7 @@ import {Project} from '../../shared/project/project';
 })
 export class ProjectListComponent implements OnInit {
 
-  @Input() myProjects: Array<any>;
+  @Input() myProjects: Array<Project>;
   constructor() { }
 
   ngOnInit() {

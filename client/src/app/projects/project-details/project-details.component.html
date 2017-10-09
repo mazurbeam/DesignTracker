@@ -1,5 +1,10 @@
-<p>
-  project-details works!
-</p>
 
-<p>{{project.name}}</p>
+<mat-card>
+    <mat-card-title>Project Details</mat-card-title>
+    <mat-card-content>{{project.name}}</mat-card-content>
+
+</mat-card>
+
+
+<app-project-activity [myProject]='project'></app-project-activity>
+
